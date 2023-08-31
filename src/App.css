@@ -14,6 +14,7 @@ li{
     background-color: white;
     color: black;
     padding: 10px;
+    width: 15rem;
 }
 #cardTrey > ul {
     width: calc(25% - 20px); /* Adjust the width and margin to control spacing */
@@ -27,8 +28,8 @@ li{
  } */
 
 .imgDisplay{
-    width: 210px;
-    height: 200px;
+    width: inherit;
+    height: auto;
     margin: auto;
 }
 .text{
@@ -50,7 +51,60 @@ button{
 
 .prodDisTrey{
     width: 80%;
-    height: 80vh;
+    min-height: 80vh;
     margin: auto;
     background-color: grey;
+    padding: 10px;
+}
+
+
+.proddescription{
+    width: 19rem;
+    background-color: wheat;
+    padding: 10px;
+}
+
+.imgprod{
+   width: inherit;
+}
+
+.input-area{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: end;
+    gap: 2px;
+}
+
+.search-btn{
+    width: 100px;
+    margin: 0;
+}
+.input-area input{
+    border: 2px solid blue;
+    border-radius: 10px;
+}
+
+.searchResults{
+    background-color: blue;
+    width: 15rem;
+    padding: 23px;
+    position: absolute; 
+    top: 8rem;
+    right: 10px;
+}
+.searchResults li{
+    background-color: inherit;
+    color: white;
+    border-bottom: 2px solid black;
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-self: center;
+}
+
+.searchBtn{
+    background-color: white;
+    color: black;
+    width: 5rem;
 }

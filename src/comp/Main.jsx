@@ -6,6 +6,9 @@ function Main() {
 
     const nav = useNavigate()
 
+
+
+    const [filteredProducts, setFilteredProducts] = useState([]);
     const [productsData, setProductsData] = useState({
         products: [
             {
@@ -42,16 +45,42 @@ function Main() {
     }, []);
 
 
-    console.log(productsData)
+    // console.log(productsData)
     const viewCart = (productId) => {
-        alert(`Viewing product with ID: ${productId}`);
         nav(`/product/${productId}`)
     };
 
+    const filterProduct = (searchTerm) => {
+        const filtered = productsData.products.filter(product =>
+            product.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredProducts(filtered);
+    };
 
     return (
         <div>
             <h1>Products</h1>
+            <div className='input-area'>
+                <input
+                    type="text"
+                    name=""
+                    id="filter-product"
+                    placeholder="Search by product title"
+                    onChange={(e) => filterProduct(e.target.value)}
+                />
+                <button className='search-btn'>Search</button>
+            </div>
+            {filteredProducts.length > 0 && (
+                <ul className='searchResults'>
+                    {filteredProducts.map(product => (
+                        <li key={product.id} className='content'>
+                            {product.title}
+                            <button onClick={() => viewCart(product.id)} className='searchBtn'>View </button>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
             <ul id='cardTrey'>
                 {productsData.products.map(product => (
                     <li key={product.id} className='content'>
@@ -60,7 +89,7 @@ function Main() {
                             <h1> {product.title}</h1>
                             <div>
                                 <p>{product.description}</p>
-                                <div>{product.price}</div>
+                                <div>N {product.price}</div>
                                 <div>{product.discountPercentage}</div>
                             </div>
                         </div>
