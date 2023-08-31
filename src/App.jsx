@@ -1,18 +1,17 @@
 import { useState } from 'react'
 
 import './App.css'
-import Header from './assets/Header'
-import Main from './assets/Main'
-import Footer from './assets/Footer'
+import { Route, Routes } from 'react-router-dom'
+import TreekleStore from './assets/TreekleStore'
+import ProductDetail from './comp/ProductDetail'
 
 function App() {
 
   return (
-    <>
-      <Header/>
-      <Main/>
-      <Footer/>
-    </>
+    <Routes>
+      <Route path='/' element={<TreekleStore/>}></Route>
+      <Route path='product/:productId' element={<ProductDetail />} />
+    </Routes>
   )
 }
 

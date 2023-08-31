@@ -1,0 +1,56 @@
+#cardTrey {
+    min-height: 80vh;
+    width: 90%;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); /* Creates columns with minimum 200px width */
+    gap: 20px; /* Adjust the gap between items */
+    color: white;
+    margin: auto;
+    padding: 10px;
+}
+li{
+    list-style: none;
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+#cardTrey > ul {
+    width: calc(25% - 20px); /* Adjust the width and margin to control spacing */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    background-color: #fff; /* Or any other color for individual cards */
+}
+/* .content{
+    display: ;
+    flex-direction: row;
+    background-color: aliceblue;
+ } */
+
+.imgDisplay{
+    width: 210px;
+    height: 200px;
+    margin: auto;
+}
+.text{
+    margin-bottom: 10px;
+    min-height: 200px;
+}
+
+button{
+    background-color: rgb(10, 3, 190);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+    display: block;
+    width: 200px;
+}
+
+
+.prodDisTrey{
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    background-color: grey;
+}
