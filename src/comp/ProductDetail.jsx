@@ -13,8 +13,8 @@ function ProductDetail() {
             <div className='prodDisTrey'>
             <h1>Product Details - {productId}</h1>
             {selectedProduct && (
-                    <div>
-                    <img src={selectedProduct.images[0]} alt="" />
+                    <div className='proddescription'>
+                    <img src={selectedProduct.images[0]} alt="" className='imgprod'/>
                         <h2>{selectedProduct.title}</h2>
                         <p>{selectedProduct.description}</p>
                         <p>Price: {selectedProduct.price}</p>
