@@ -1,8 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <nav>
+      <div className='logo'>
+        TREEKLE STORE 
+      </div>
+      <ul>
+        <li><Link to="/">Shop</Link></li>
+      </ul>
+    </nav>
   )
 }
 
