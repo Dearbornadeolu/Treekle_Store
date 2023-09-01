@@ -3,6 +3,9 @@
 
 Welcome to our Shopping site! This web application provides users with an immersive shopping experience, offering a vast selection of products from various categories. Whether you're looking for elecronics, home-decor etc we've got ypu covered. Our products are generated using the API - dummyjson.com
 
+## live page
+https://treekle-store-y7s8.vercel.app/
+
 ## Features
 
 - **Search and Filters:** Find products quickly using our search functionality and apply filters to refine your search.
