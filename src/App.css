@@ -62,6 +62,7 @@ li{
     flex-direction: column;
     justify-content: space-between;
     border-radius: 20px;
+
 }
 
 
@@ -100,27 +101,18 @@ button{
 
 
 .prodDisTrey{
-    width: 60%;
-    padding: 10px;
+    width: 80%;
+    min-height: 80vh;
     margin: auto;
     background-color: grey;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    border-radius: 20px;
+    padding: 10px;
 }
 
-.h1Header{
-    text-align: center;
-}
-.prodDisTrey img{
-    width: 300px;
-}
+
 .proddescription{
-    width: inherit;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    
+    width: 19rem;
+    background-color: wheat;
+    padding: 10px;
 }
 
 .imgprod{
@@ -137,7 +129,6 @@ button{
 .search-btn{
     width: 100px;
     margin: 0;
-    height: 30px;
 }
 .input-area input{
     border: 2px solid blue;
