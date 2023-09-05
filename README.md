@@ -1,4 +1,4 @@
-# shopping Site
+# Shopping Site
 ## Overflow
 
 Welcome to our Shopping site! This web application provides users with an immersive shopping experience, offering a vast selection of products from various categories. Whether you're looking for elecronics, home-decor etc we've got ypu covered. Our products are generated using the API - dummyjson.com
