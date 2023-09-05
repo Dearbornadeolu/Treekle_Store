@@ -71,10 +71,7 @@ function Main() {
                 />
                 <button className='search-btn'>Search</button>
             </div>
-<<<<<<< HEAD
             </div>
-=======
->>>>>>> 738a70da5c1e52e1bbe68ff203333b26b34200ae
             {filteredProducts.length > 0 && (
                 <ul className='searchResults'>
                     {filteredProducts.map(product => (

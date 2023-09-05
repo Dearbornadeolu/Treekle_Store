@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import TreekleStore from './assets/TreekleStore'
+import TreekleStore from './TreekleStore'
 import ProductDetail from './comp/ProductDetail'
 
 function App() {
