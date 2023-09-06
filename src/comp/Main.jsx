@@ -59,6 +59,7 @@ function Main() {
 
     return (
         <div>
+            <div className='prodHeader'>
             <h1>Products</h1>
             <div className='input-area'>
                 <input
@@ -69,6 +70,7 @@ function Main() {
                     onChange={(e) => filterProduct(e.target.value)}
                 />
                 <button className='search-btn'>Search</button>
+            </div>
             </div>
             {filteredProducts.length > 0 && (
                 <ul className='searchResults'>
