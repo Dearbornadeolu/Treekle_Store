@@ -13,7 +13,7 @@ function Main() {
         products: [
             {
                 id: 1,
-                title: 'iPhone 9',
+                title: 'iPhone',
                 description: 'An apple mobile which is nothing like apple',
                 price: 549,
                 discountPercentage: 12.96,
