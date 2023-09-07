@@ -22,6 +22,7 @@ function ProductDetail() {
                         <p>{selectedProduct.description}</p>
                         <p>Price: {selectedProduct.price}</p>
                         <p>Discount: {selectedProduct.discountPercentage}%</p>
+                        <p>Category: {selectedProduct.category}</p>
                         </div>
                     </div>
                 )}

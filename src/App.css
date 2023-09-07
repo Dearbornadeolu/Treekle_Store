@@ -44,7 +44,7 @@ nav ul li a{
     width: 90%;
     background-color: grey;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); /* Creates columns with minimum 200px width */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates columns with minimum 200px width */
     gap: 20px; /* Adjust the gap between items */
     color: white;
     margin: auto;
@@ -158,4 +158,22 @@ button{
     background-color: white;
     color: black;
     width: 5rem;
+}
+
+/* Set the cursor to pointer for interactive elements */
+button, a, input[type="button"], input[type="submit"], li{
+    cursor: pointer;
+  }
+  
+  /* Add space and black border to product cards */
+.content {
+    list-style: none;
+    background-color: white;
+    color: black;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    border: 1px solid black; /* Add a black border to each card */
 }
