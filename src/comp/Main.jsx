@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams, Link, Route, Routes } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import "../App.css";
 import SearchResults from './SearchResults'; // Import the SearchResults component
 
@@ -58,7 +58,6 @@ function Main() {
         // setFilteredProducts(filtered);
         // Update the URL to reflect the search query
         nav(`/products/search?q=${encodeURIComponent(searchQuery)}`);
-
     };
 
     // Filter products by category
@@ -93,7 +92,13 @@ function Main() {
     };
 
     return (
-        <div>
+        <div className="main-container">
+            <div className="hero-section">
+                <div className="hero-text">
+                    <h1>Welcome to Our Store</h1>
+                    <p>Discover a wide range of products</p>
+                </div>
+            </div>
             <div className='prodHeader'>
                 <h1>Products</h1>
                 <div className='input-area'>
@@ -109,7 +114,7 @@ function Main() {
                 </div>
                 {/* Category selector */}
                 <div className='category-dropdown'>
-                    <button className='category-btn' onMouseEnter={toggleCategoryMenu}>Categories</button>
+                    <button className='category-btn' onClick={toggleCategoryMenu}>Categories</button>
                     {/* Toggle the category menu based on isCategoryMenuOpen */}
                     {isCategoryMenuOpen && (
                         <div className='category-menu'>
@@ -138,7 +143,7 @@ function Main() {
                                 <div>{product.discountPercentage}</div>
                             </div>
                         </div>
-                        <button onClick={() => viewProduct(product.id)}>View Product</button>
+                        <button onClick={() => viewProduct(product.id)} className='btn-prod'>View Product</button>
                     </li>
                 ))}
             </ul>

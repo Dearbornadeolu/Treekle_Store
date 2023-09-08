@@ -21,163 +21,197 @@ nav ul{
 nav ul li a{
     text-decoration: none;
 }
-.prodHeader{
+/* App.css */
+
+/* Main container */
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  /* App.css  */
+
+  /* btn viw product */
+  .btn-prod{
+    height: 30px;
+  }
+
+/* Style for the hero section container */
+.hero-section {
+    position: relative;
+    text-align: center;
+    background-color: #f0f0f0; /* Background color for the hero section */
+    padding: 100px 0;
+     /* Adjust the padding as needed */
+     margin-bottom: 20px;
+      background-image: url("/src/assets/hero-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Style for the hero image */
+  .hero-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain the image's aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+    display: block;
+  }
+  
+  /* Style for the hero text */
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #3447ec; /* Text color for the hero text */
+  }
+  
+  .hero-text h1 {
+    font-size: 36px; /* Adjust the font size as needed */
+    margin-bottom: 20px; /* Adjust the spacing as needed */
+  }
+  
+  .hero-text p {
+    font-size: 18px; /* Adjust the font size as needed */
+  }
+  
+  
+  /* Header styles */
+  .prodHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: grey;
-    margin-bottom: 10px;
-    padding: 5px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-/* .prodHeader h1{
-    b
-} */
-
-#cardTrey {
-    min-height: 80vh;
-    width: 90%;
-    background-color: grey;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates columns with minimum 200px width */
-    gap: 20px; /* Adjust the gap between items */
-    color: white;
-    margin: auto;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 20px;
-}
-li{
-    list-style: none;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    width: 15rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 20px;
-
-}
-
-
-
-#cardTrey > ul {
-    width: calc(25% - 20px); /* Adjust the width and margin to control spacing */
-    margin-bottom: 20px; /* Adjust the margin as needed */
-    background-color: #fff; /* Or any other color for individual cards */
-}
-/* .content{
-    display: ;
-    flex-direction: row;
-    background-color: aliceblue;
- } */
-
-.imgDisplay{
-    width: inherit;
-    height: auto;
-    margin: auto;
-}
-.text{
-    margin-bottom: 10px;
-    min-height: 200px;
-}
-
-button{
-    background-color: rgb(10, 3, 190);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    margin: auto;
-    display: block;
-    width: 200px;
-}
-
-
-.prodDisTrey{
-    width: 80%;
-    min-height: 80vh;
-    margin: auto;
-    background-color: grey;
-    padding: 10px;
-}
-
-
-.proddescription{
-    width: 19rem;
-    background-color: wheat;
-    padding: 10px;
-}
-
-.imgprod{
-   width: inherit;
-}
-
-.input-area{
     margin-bottom: 20px;
-    display: flex;
-    justify-content: end;
-    gap: 2px;
-}
-
-.search-btn{
-    width: 100px;
+  }
+  
+  .prodHeader h1 {
+    font-size: 24px;
     margin: 0;
-}
-.input-area input{
-    border: 2px solid blue;
-    border-radius: 10px;
-}
-
-.searchResults{
-    background-color: blue;
-    width: 15rem;
-    padding: 23px;
-    position: absolute; 
-    top: 8rem;
-    right: 10px;
-}
-.searchResults li{
-    background-color: inherit;
-    color: white;
-    border-bottom: 2px solid black;
-    padding: 2px;
+  }
+  
+  .input-area {
+    flex: 1;
     display: flex;
-    justify-content: space-between;
-    align-content: center;
-    align-self: center;
-}
-
-.searchBtn{
-    background-color: white;
-    color: black;
-    width: 5rem;
-}
-
-/* Set the cursor to pointer for interactive elements */
-button, a, input[type="button"], input[type="submit"], li{
+    gap: 10px;
+  }
+  
+  #filter-product {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  /* Category dropdown */
+  .category-dropdown {
+    position: relative;
+  }
+  
+  .category-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
     cursor: pointer;
   }
   
-  /* Add space and black border to product cards */
-.content {
-    list-style: none;
+  .category-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
     background-color: white;
-    color: black;
-    width: 90%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+  }
+  
+  .category-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .category-menu li {
+    padding: 4px 0;
+    cursor: pointer;
+  }
+  
+  .category-menu li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Product card styles */
+  #cardTrey {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .content {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .imgDisplay {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .text {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border-radius: 20px;
-    border: 1px solid black; /* Add a black border to each card */
-}
-
+  }
+  
+  .text h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .text p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .prodHeader {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .input-area {
+      flex-direction: column;
+    }
+  
+    .category-dropdown {
+      margin-top: 10px;
+    }
+  
+    .category-menu {
+      right: -10px;
+    }
+  }
+  
 
 
 
@@ -248,7 +282,7 @@ button, a, input[type="button"], input[type="submit"], li{
   }
   
 
-/* SearchResults.css */
+/* SearchResults */
 
 /* Common styles for all screen sizes */
 .search-results-container {
@@ -275,6 +309,8 @@ button, a, input[type="button"], input[type="submit"], li{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    max-width: calc(33.33% - 20px); /* Adjust the width for larger screens */
   }
   
   .product-image {
@@ -308,14 +344,14 @@ button, a, input[type="button"], input[type="submit"], li{
   /* Responsive styles for smaller screens */
   @media (max-width: 768px) {
     .product-item {
-      width: calc(50% - 20px); /* Adjust the width for smaller screens */
+      max-width: calc(50% - 20px); /* Adjust the width for smaller screens */
     }
   }
   
   /* Responsive styles for even smaller screens (e.g., mobile) */
   @media (max-width: 480px) {
     .product-item {
-      width: 100%; /* Full width for mobile */
+      max-width: 100%; /* Full width for mobile */
     }
   }
   
