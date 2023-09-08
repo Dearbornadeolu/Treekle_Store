@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import "../App.css"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, Link, Route, Routes } from 'react-router-dom';
+import "../App.css";
+import SearchResults from './SearchResults'; // Import the SearchResults component
 
 function Main() {
-    const nav = useNavigate()
+    const nav = useNavigate();
+    const { q } = useParams(); // Get the search query from the URL
 
-    const [searchQuery, setSearchQuery] = useState('');
+    const [searchQuery, setSearchQuery] = useState(q || ''); // Initialize searchQuery from URL or empty string
     const [selectedCategory, setSelectedCategory] = useState('');
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [productsData, setProductsData] = useState({
@@ -23,7 +25,8 @@ function Main() {
                 const response = await fetch('https://dummyjson.com/products');
                 const data = await response.json();
                 setProductsData(data);
-                setFilteredProducts(data.products); // Initially, display all products
+                // Initially, display all products if the search query is not provided in the URL
+                setFilteredProducts(q ? filterProductsBySearch(q, data.products) : data.products);
 
                 // Extract available categories from products
                 const categories = [...new Set(data.products.map(product => product.category))];
@@ -34,21 +37,28 @@ function Main() {
         }
 
         fetchProducts();
-    }, []);
+    }, [q]);
 
     // Filter products by search query
-    const filterProductsBySearch = (query) => {
-        const filtered = productsData.products.filter(product =>
+    const filterProductsBySearch = (query, products) => {
+        return products.filter(product =>
             product.title.toLowerCase().includes(query.toLowerCase())
         );
-        setFilteredProducts(filtered);
     };
 
     // Handle changes in the search query
     const handleSearchChange = (e) => {
         const query = e.target.value;
         setSearchQuery(query);
-        filterProductsBySearch(query);
+    };
+
+    // Handle the search button click
+    const handleSearchButtonClick = () => {
+        // const filtered = filterProductsBySearch(searchQuery, productsData.products);
+        // setFilteredProducts(filtered);
+        // Update the URL to reflect the search query
+        nav(`/products/search?q=${encodeURIComponent(searchQuery)}`);
+
     };
 
     // Filter products by category
@@ -76,6 +86,12 @@ function Main() {
         setIsCategoryMenuOpen(!isCategoryMenuOpen);
     };
 
+    // Handle viewing a product's details
+    const viewProduct = (productId) => {
+        console.log(productId);
+        nav(`/products/${productId}`);
+    };
+
     return (
         <div>
             <div className='prodHeader'>
@@ -89,7 +105,7 @@ function Main() {
                         value={searchQuery}
                         onChange={handleSearchChange}
                     />
-                    <button className='search-btn'>Search</button>
+                    <button className='search-btn' onClick={handleSearchButtonClick}>Search</button>
                 </div>
                 {/* Category selector */}
                 <div className='category-dropdown'>
@@ -111,7 +127,9 @@ function Main() {
             <ul id='cardTrey'>
                 {filteredProducts.map(product => (
                     <li key={product.id} className='content'>
-                        <img src={product.images[0]} alt={product.title} className='imgDisplay' />
+                        {product.images && product.images[0] && (
+                            <img src={product.images[0]} alt={product.title} className='imgDisplay' />
+                        )}
                         <div className='text'>
                             <h1> {product.title}</h1>
                             <div>
@@ -120,7 +138,7 @@ function Main() {
                                 <div>{product.discountPercentage}</div>
                             </div>
                         </div>
-                        <button onClick={() => viewCart(product.id)}>View Product</button>
+                        <button onClick={() => viewProduct(product.id)}>View Product</button>
                     </li>
                 ))}
             </ul>
