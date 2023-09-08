@@ -1,34 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useProductContext } from './ProductContext';
-import Header from './Header';
+import "../App.css"
 
 function ProductDetail() {
-   const { productId } = useParams()
-   const productData = useProductContext()
+  // Use the useParams hook to get the productId from the URL
+  const { productId } = useParams();
 
-   const selectedProduct = productData.products.find(product => product.id === parseInt(productId));
+  const [product, setProduct] = useState(null);
 
-    return (
-        <div>
-            <Header/>
-            <div className='prodDisTrey'>
-            <h1 className='h1Header'>Product Details - {productId}</h1>
-            {selectedProduct && (
-                    <div className='proddescription'>
-                    <img src={selectedProduct.images[0]} alt="" className='imgprod'/>
-                        <div>
-                        <h2>{selectedProduct.title}</h2>
-                        <p>{selectedProduct.description}</p>
-                        <p>Price: {selectedProduct.price}</p>
-                        <p>Discount: {selectedProduct.discountPercentage}%</p>
-                        <p>Category: {selectedProduct.category}</p>
-                        </div>
-                    </div>
-                )}
-            </div>
+  useEffect(() => {
+    async function fetchProduct() {
+      try {
+        const response = await fetch(`https://dummyjson.com/products/${productId}`);
+        const data = await response.json();
+        setProduct(data);
+      } catch (error) {
+        console.error('Error fetching product:', error);
+      }
+    }
+
+    fetchProduct();
+  }, [productId]);
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className="product-detail">
+      <div className="product-image">
+        {product.images && product.images[0] && ( // Check if images is defined
+          <img src={product.images[0]} alt={product.title} />
+        )}
+      </div>
+      <div className="product-info">
+        <h1>{product.title}</h1>
+        <p>{product.description}</p>
+        <div className="product-price">
+          <span>Price: N {product.price}</span>
+          <span>Discount: {product.discountPercentage}%</span>
         </div>
-    );
+        <button className="buy-button">Buy Now</button>
+      </div>
+    </div>
+  );
 }
 
 export default ProductDetail;
